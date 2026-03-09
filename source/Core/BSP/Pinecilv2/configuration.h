@@ -28,8 +28,10 @@
  * How many seconds/minutes we wait until going to sleep/shutdown.
  * Values -> SLEEP_TIME * 10; i.e. 5*10 = 50 Seconds!
  */
-#define SLEEP_TIME    5  // x10 Seconds
-#define SHUTDOWN_TIME 10 // Minutes
+
+ // Disabled sleep and shutdown mode
+#define SLEEP_TIME    0  // x10 Seconds
+#define SHUTDOWN_TIME 0 // Minutes
 
 /**
  * Auto start off for safety.
@@ -39,7 +41,7 @@
  *  2 - Sleep Temperature
  *  3 - Sleep Off Temperature
  */
-#define AUTO_START_MODE 0 // Default to none
+#define AUTO_START_MODE 1 //  Default to Soldering Temperature
 
 /**
  * Locking Mode
@@ -126,7 +128,7 @@
 #ifdef MODEL_Pinecilv2
 #define ADC_VDD_MV                 3200                      // ADC max reading millivolts
 #define ADC_MAX_READING            ((1 << 16) >> 1)          // Maximum reading of the adc
-#define SOLDERING_TEMP             320                       // Default soldering temp is 320.0 °C
+#define SOLDERING_TEMP             380                       // Default soldering temp is 320.0 °C
 #define VOLTAGE_DIV                630                       // 600 - Default divider from schematic
 #define CALIBRATION_OFFSET         900                       // 900 - Default adc offset in uV
 #define MIN_CALIBRATION_OFFSET     100                       // Min value for calibration
